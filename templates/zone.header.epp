@@ -1,0 +1,21 @@
+$TTL <%= @ttl %>
+@ IN SOA <%= $dns::zone::soa %>. <%= dns::zone::_contact %> (
+	<%= $dns::zone::serial %>	;Serial
+	<%= $dns::zone::refresh %>	;Refresh
+	<%= $dns::zone::update_retry %>	;Retry
+	<%= $dns::zone::expire %>	;Expire
+	<%= $dns::zone::negttl %>	;Negative caching TTL
+)
+
+@ IN NS <%= $dns::zone::soa %>.
+<% unless $dns::zone::reverse -%>
+<% if $dns::zone::soaip -%>
+<%= $dns::zone::soa %>. IN A <%= $dns::zone::soaip %>
+<% end -%>
+<% if $dns::zone::soaipv6 -%>
+<%= $dns::zone::soa %>. IN AAAA <%= $dns::zone::soaipv6 %>
+<% end -%>
+<% end -%>
+<%- @records.each do |record| -%>
+<%= record %>
+<%- end -%>

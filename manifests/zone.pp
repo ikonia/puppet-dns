@@ -152,7 +152,7 @@ define dns::zone (
       owner   => $dns::user,
       group   => $dns::group,
       mode    => '0644',
-      content => template('dns/zone.header.erb'),
+      content => template('dns/zone.header.epp'),
       replace => $replace_file,
       notify  => Class['dns::service'],
     }
