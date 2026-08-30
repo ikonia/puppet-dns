@@ -22,17 +22,13 @@
     },
     {
       "name": "puppetlabs/stdlib",
-      "version_requirement": ">= 9.0.0 < 10.0.0"
+      "version_requirement": ">= 9.0.0 < 11.0.0"
     }
   ],
   "requirements": [
     {
       "name": "openvox",
-      "version_requirement": ">= 8.19.0 < 9.0.0"
-    },
-    {
-      "name": "puppet",
-      "version_requirement": ">= 8.0.0 < 9.0.0"
+      "version_requirement": ">= 8.19.0 < 10.0.0"
     }
   ],
   "operatingsystem_support": [
@@ -55,7 +51,9 @@
       "operatingsystem": "Fedora",
       "operatingsystemrelease": [
         "39",
-        "40"
+        "40",
+        "43",
+        "44"
       ]
     },
     {
@@ -71,13 +69,14 @@
       "operatingsystemrelease": [
         "20.04",
         "22.04",
-        "24.04"
+        "24.04",
+        "26.04"
       ]
     },
     {
       "operatingsystem": "FreeBSD",
       "operatingsystemrelease": [
-        "11"
+        "14"
       ]
     },
     {
@@ -86,7 +85,7 @@
     {
       "operatingsystem": "DragonFly",
       "operatingsystemrelease": [
-        "4"
+        "6"
       ]
     },
     {
